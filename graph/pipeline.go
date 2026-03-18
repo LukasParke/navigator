@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	navigator "github.com/sailpoint-oss/navigator"
+	navigator "github.com/LukasParke/navigator"
 )
 
 // Stage defines a processing stage in the pipeline.
@@ -107,7 +107,7 @@ func DefaultStages() []Stage {
 type rawStage struct{}
 
 func (s *rawStage) Name() StageName        { return StageRaw }
-func (s *rawStage) DependsOn() []StageName  { return nil }
+func (s *rawStage) DependsOn() []StageName { return nil }
 func (s *rawStage) Run(ctx context.Context, g *WorkspaceGraph, uri string) (*StageResult, error) {
 	start := time.Now()
 	node := g.Node(uri)
@@ -128,7 +128,7 @@ func (s *rawStage) Run(ctx context.Context, g *WorkspaceGraph, uri string) (*Sta
 type parseStage struct{}
 
 func (s *parseStage) Name() StageName        { return StageParse }
-func (s *parseStage) DependsOn() []StageName  { return []StageName{StageRaw} }
+func (s *parseStage) DependsOn() []StageName { return []StageName{StageRaw} }
 func (s *parseStage) Run(ctx context.Context, g *WorkspaceGraph, uri string) (*StageResult, error) {
 	start := time.Now()
 	node := g.Node(uri)
@@ -149,7 +149,7 @@ func (s *parseStage) Run(ctx context.Context, g *WorkspaceGraph, uri string) (*S
 type bindStage struct{}
 
 func (s *bindStage) Name() StageName        { return StageBind }
-func (s *bindStage) DependsOn() []StageName  { return []StageName{StageParse} }
+func (s *bindStage) DependsOn() []StageName { return []StageName{StageParse} }
 func (s *bindStage) Run(_ context.Context, g *WorkspaceGraph, uri string) (*StageResult, error) {
 	start := time.Now()
 	node := g.Node(uri)

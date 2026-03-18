@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	navigator "github.com/sailpoint-oss/navigator"
+	navigator "github.com/LukasParke/navigator"
 )
 
 func TestSnapshot_Build(t *testing.T) {

@@ -3,7 +3,7 @@ package graph
 import (
 	"time"
 
-	navigator "github.com/sailpoint-oss/navigator"
+	navigator "github.com/LukasParke/navigator"
 )
 
 // StageName identifies a processing stage in the pipeline.

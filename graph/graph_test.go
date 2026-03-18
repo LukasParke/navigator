@@ -4,7 +4,7 @@ import (
 	"sort"
 	"testing"
 
-	navigator "github.com/sailpoint-oss/navigator"
+	navigator "github.com/LukasParke/navigator"
 )
 
 func TestWorkspaceGraph_AddRemoveSource(t *testing.T) {

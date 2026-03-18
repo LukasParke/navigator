@@ -4,7 +4,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	navigator "github.com/sailpoint-oss/navigator"
+	navigator "github.com/LukasParke/navigator"
 )
 
 // Snapshot is an immutable point-in-time view of the workspace graph.

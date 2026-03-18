@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	navigator "github.com/sailpoint-oss/navigator"
+	navigator "github.com/LukasParke/navigator"
 )
 
 // LSPSource adapts an external LSP document provider into navigator's
